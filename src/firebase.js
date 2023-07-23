@@ -2,20 +2,18 @@
 import { getAuth } from "firebase/auth";
 
 // const firebaseConfig = {
-//   apiKey: "AIzaSyB896pvCZwGVU5RUIWBIVzUAtTllNAu0n8",
-//   authDomain: "fir-auth-1132.firebaseapp.com",
-//   projectId: "fir-auth-1132",
-//   storageBucket: "fir-auth-1132.appspot.com",
-//   messagingSenderId: "1029021654707",
-//   appId: "1:1029021654707:web:14aa4dee98449061701ac6",
-//   measurementId: "G-MFP6M081T7",
+//   apiKey: <YOURAPIKEY>,
+//   authDomain: <YOURAUTHDOAMIN>,
+//   projectId: <YOURPROJECTID>,
+//   storageBucket: <YOURSTORAGEBUCKET>,
+//   messagingSenderId: <YOURMESSAGINGSENDERID>,
+//   appId: <YOURAPPID>,
 // };
 
+// // Initialize Firebase
 // const app = initializeApp(firebaseConfig);
-
-// const auth = getAuth();
-
-// export { app, auth };
+// export const auth = getAuth(app);
+// export default app;
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
@@ -38,5 +36,5 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth();
-export { app, auth };
+export const auth = getAuth(app);
+export default app;

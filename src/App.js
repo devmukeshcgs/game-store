@@ -6,13 +6,16 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { UserAuthContextProvider } from "./context/UserAuthContext";
+import MainNavigation from "./components/MainNavigation";
+import Contact from "./components/Contact";
 
 function App() {
   return (
-    <Container style={{ width: "400px" }}>
-      <Row>
-        <Col>
-          <UserAuthContextProvider>
+    <UserAuthContextProvider>
+      <MainNavigation />
+      <Container>
+        <Row>
+          <Col>
             <Routes>
               <Route
                 path="/home"
@@ -24,11 +27,12 @@ function App() {
               />
               <Route path="/" element={<Login />} />
               <Route path="/signup" element={<Signup />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
-          </UserAuthContextProvider>
-        </Col>
-      </Row>
-    </Container>
+          </Col>
+        </Row>
+      </Container>
+    </UserAuthContextProvider>
   );
 }
 
